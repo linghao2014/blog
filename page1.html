@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/ling.css">
 
-    <title>My blog</title>
+    <title>Page</title>
   </head>
 
   <body>
@@ -50,32 +50,77 @@
       </div>
       <!--1 end-->
 
+<!--blog内容-->
+  <section class="inner">
+  	<h2>代码复用-5种类式继承模式</h2>
+  	<p class="type">分类：<a href="#">javascript 模式</a></p>
 
-  <section id="main_content" class="inner">
-        <h2>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>欢迎来到我的个人blog!</h2>
+  	<p>准备:</p>
+  	<pre><code>
+//父构造函数：
+function Parent(name){
+  		this.name=name||'ling';
+}
+//向该原型添加功能:
+Parent.prototype.say=function(){
+	return this.name;			
+}
+//空白的子构造函数:
+function Child(name){};
+//继承开始:
+inherit(Child,Parent);
+<red>注：inherit()函数并非由编程语言提供，必须自己实现!</red>
+  	</code></pre>
+  	<h4>1.默认模式（prototype）</h4>
+  		<pre><code>
+function inherit(C,P){
+	C.prototype=new P();
+}
+  		</code></pre>
+  	<p>缺点：它同时继承了两个对象的属性，在绝大多数时候，并不需要这些自身属性，<red>因为他很可能是指向一个特定的实例，而不是复用。</red></p>
+  	<pre><code>
+如:
+var s =new Child('zhang');
+s.say()      //<red>输出‘ling’ 而不是‘zhnag’</red>
+  		</code></pre>
 
-<div class="content"><a href="page1.html">
-  <h3><span><img src="images/icon.png"></span> 代码复用-5种类式继承模式</h3>
-  <p>//父构造函数 function Parent(name){ this.name=name || 'ling'; } //向该原型添加功能 Parent.prototype.say=function(){ return this.name; } //空白的子构造函数 function Child(name){}; //继承开始 inherit(Child,Parent); ...</p>
-  <p id="time"></p>
-</a></div>
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+  		<h4>2.借用构造函数（apply()）</h4>
+  		<pre><code>
+function Child(a,b,c,d){
+	Parent.apply(this,arguments);
+}
+  		</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+		<h4>3.借用和设置原型（1.+2.）</h4>
+  		<pre><code>
+function Child(a,b,c,d){
+	Parent.apply(this,arguments);
+}
+Child.prototype=new Parent();
+  		</code></pre>
+  		<p>优点：运行后的结果对象能获得父对象本身的成员副本，同时子对象也能够将任意参数传递到父构造函数。</p>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+  		<h4>4.共享原型</h4>
+  		<pre><code>
+function inherit(C,P){
+	C.prototype=P.prototype;
+}
+  		</code></pre>
+  		<p>这种模式能够向你提供简短而迅速的原型链查询，因为所有对象共享了同一个原型。但：如果在继承链下方的某处存在一个子对象修改了原型，它将影响到所有的父对象。</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+  		<h4>5.临时构造函数</h4>
+  		<pre><code>
+function inherit(C,P){
+	var F=function(){};
+	F.prototype=P.prototype;
+	C.prototype=new F();
+}
+  		</code></pre>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
   </section>
     </div>
+<!--blog内容 end-->
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">

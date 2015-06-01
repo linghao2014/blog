@@ -69,8 +69,33 @@
 /*content*/
  .content h3{
 	font-family: 'microsoft yahei',initial;
+	vertical-align: middle;
+ }
+ .content a{
+ 	text-decoration: none;
+ }
+ .content h3 span{
+ 	display:block;
+ 	float:left;
+	width:30px;
+	height:35px;
+	overflow:hidden;
+	margin-top:-5px;
+ }
+ .content h3 img{
+ 	
  }
   .content p{
   	color:#666;
   	font-family: 'microsoft yahei',initial;
+  	text-indent: 2em;
+ }
+ #time{
+ 	text-align: right;
+ }
+ .type{
+ 	font-size: 8px;
+ }
+ red{
+ 	color:red;
  }
