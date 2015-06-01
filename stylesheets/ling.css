@@ -5,7 +5,72 @@
  * @date    2015-06-01 16:11:31
  * @version $Id$
  */
+ #project_title span{
+ 	margin-left:300px;
+ 	float:right;
+ }
+ #project_title span a{
+ 	width:40px;
+ 	overflow: hidden;
+ 	display: block;
+ 	float:right;
+ }
+ #project_title .f1{
+ 	margin-left:-85px;
+ }
+ #project_title .f2{
+	margin-left:-45px;
+ }
+ #project_title .f3{
+ 	margin-left:-5px;
+ }
 
- .hamster{float:left;}
- .left{width:300px;float:left;background-color: #ccc;}
- .massages{width:300px;float:left;}
+ .hamster{
+ 	float:left;
+ 	margin-top:60px;
+ }
+ .left{
+ 	width:300px;
+ 	float:left;
+ }
+ .massages{
+ 	width:300px;
+ 	float:left;
+ 	margin-top:20px;
+ }
+ .massages img{
+ 	margin:0;
+ 	padding:0;
+ 	float:left;
+ }
+ .massages .m_img2{
+ 	margin-top: -58px;
+ }
+ .massages .m_img3{
+ 	margin-top: -110px;
+ }
+
+ .massages span{
+ 	width:300px;
+ 	height:60px;
+ 	line-height: 60px;
+ 	overflow: hidden;
+ 	display:block;
+ 	float:left;
+ }
+ .massages p{
+ 	height:60px;
+ 	line-height:60px;
+ 	margin:0;padding:0;
+ 	float:left;
+ 	font-size: 20px;
+ 	font-family: 'microsoft yahei',initial;
+ }
+/*content*/
+ .content h3{
+	font-family: 'microsoft yahei',initial;
+ }
+  .content p{
+  	color:#666;
+  	font-family: 'microsoft yahei',initial;
+ }
