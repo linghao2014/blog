@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Ling
+ * @date    2015-06-01 16:11:31
+ * @version $Id$
+ */
+
+ .hamster{float:left;}
+ .left{width:300px;float:left;background-color: #ccc;}
