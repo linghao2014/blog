@@ -10,6 +10,5 @@ window.onload=function(){
 	var oMinutes=oDate.getMinutes();
 	var oSeconds=oDate.getSeconds();
 
-	oTime.innerHTML=oYear+"-"+oMonth+"-"+oDay+" "+oHours+":"+oMinutes+":"+oSeconds;
-	console.log(1);
+	//oTime.innerHTML=oYear+"-"+oMonth+"-"+oDay+" "+oHours+":"+oMinutes+":"+oSeconds;
 }
